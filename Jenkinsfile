@@ -1,10 +1,23 @@
 pipeline{
 agent any
 stages{
-stage("hello"){
+stage("dev deploy"){
+  when{
+    branch "develop"
+  }
 steps{
-echo "this is jenkinsfile"
+echo "deployinh to dev"
 }
+}
+  stage("test deploy"){
+  when{
+    branch "test"
+  }
+}
+  stage("prod deploy"){
+  when{
+    branch "main"
+  }
 }
 }
 }
