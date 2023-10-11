@@ -17,7 +17,7 @@ echo "deploying to dev"
   stage("test deploy"){
     when{
       branch"test"
-      ]
+    }
 steps{
 echo "deploying to test"
 }
