@@ -1,23 +1,25 @@
 pipeline{
 agent any
 stages{
-stage("dev deploy"){
-  when{
-    branch "develop"
-  }
+stage("maven build"){
 steps{
-echo "deployinh to dev"
+echo "this is jenkinsfile"
+}
+}
+  stage("dev deploy"){
+steps{
+echo "deploying to dev"
 }
 }
   stage("test deploy"){
-  when{
-    branch "test"
-  }
+steps{
+echo "deploying to test"
 }
+  }
   stage("prod deploy"){
-  when{
-    branch "main"
-  }
+steps{
+echo "deploying to main"
 }
+  }
 }
 }
